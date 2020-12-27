@@ -3,9 +3,8 @@ from pathlib import Path
 
 
 class SandboxAPI:
-    def __init__(self):
-        api_lib = Path(__file__).parent.parent.parent / 'cmake-build-debug' / 'libstatelibrary.so'
-        self.api = cdll.LoadLibrary(api_lib)
+    def __init__(self, path_to_api_dll_relative_to_repo_root: str):
+        self.api = cdll.LoadLibrary(path_to_api_dll_relative_to_repo_root)
         self.api.getNewState.argtypes = []
         self.api.getNewState.restype = c_void_p
         self.api.clearState.argtypes = [c_void_p]

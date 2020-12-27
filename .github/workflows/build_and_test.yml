@@ -26,11 +26,11 @@ jobs:
         shell: bash
         run: cmake -DCMAKE_BUILD_TYPE=Release ../
 
-      - name: Build Package
+      - name: Build
         working-directory: ./build
         shell: bash
         run: cmake --build . -j 2
 
       - name: Run Tests
         working-directory: ./build
-        run: ctest
+        run: ctest -VV
