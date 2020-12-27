@@ -6,7 +6,7 @@ api_dir = Path(__file__).parent.parent.absolute() / 'src' / 'api'
 sys.path.insert(0, str(api_dir))
 from sandbox import SandboxAPI
 
-if environ.get('TRAVIS', None):
+if environ.get('CI', None):
     api_lib = Path(__file__).parent.parent / 'build' / 'libstatelibrary.so'
 else:  # my local path, change as needed
     api_lib = Path(__file__).parent.parent / 'cmake-build-debug' / 'libstatelibrary.so'
