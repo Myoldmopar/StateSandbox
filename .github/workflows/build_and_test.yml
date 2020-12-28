@@ -2,10 +2,6 @@ name: Build and Test
 
 on: [push]
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  BUILD_TYPE: Release
-
 jobs:
   linux_build:
     runs-on: ubuntu-20.04
