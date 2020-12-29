@@ -1,8 +1,6 @@
 #ifndef MANAGER_H
 #define MANAGER_H
 
-struct FullState;
-
-int internalRunSimulation(FullState &state);
+int internalRunSimulation();
 
 #endif //MANAGER_H

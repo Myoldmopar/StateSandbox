@@ -9,7 +9,12 @@ struct FullState {
     std::unique_ptr<DataWorkerComponent> dataWorkerComponent;
     int someValue = 0;
     FullState();
-    void clearState();
+    void clearState() const;
 };
+
+extern unsigned int thread_local currentStateHandle;
+FullState & getCurrentState();
+void createNewState();
+void deleteCurrentState();
 
 #endif //STATE_H
