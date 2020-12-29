@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(src)
 
 # Create a DLL with an API
-add_library(statelibrary SHARED src/library.cpp src/library.h src/worker.cpp src/worker.h src/state.cpp src/state.h src/api/api.cpp src/api/api.h src/manager.cpp src/manager.h)
+add_library(statelibrary SHARED src/worker.cpp src/worker.h src/state.cpp src/state.h src/api/api.cpp src/api/api.h src/manager.cpp src/manager.h)
 
 # Create a main Sandbox binary that depends on the DLL
 add_executable(statesandbox src/main.cpp)
