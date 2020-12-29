@@ -4,21 +4,22 @@
 #include <worker.h>  // needed to instantiate FullState
 
 State getNewState() {
-    FullState * s = new FullState;
-    return s;
+    createNewState();
+    return currentStateHandle;
 }
 
 void clearState(State s) {
-    FullState * sp = static_cast<FullState *>(s);
-    sp->clearState();
+    currentStateHandle = s;
+    FullState & sp = getCurrentState();
+    sp.clearState();
 }
 
 void deleteState(State s) {
-    FullState * sp = static_cast<FullState *>(s);
-    delete sp;
+    currentStateHandle = s;
+    deleteCurrentState();
 }
 
 void runSimulation(State s) {
-    FullState * sp = static_cast<FullState *>(s);
-    internalRunSimulation(*sp);
+    currentStateHandle = s;
+    internalRunSimulation();
 }

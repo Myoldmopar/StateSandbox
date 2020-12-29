@@ -8,8 +8,8 @@ struct FullState;
 
 struct WorkerComponent {
     int timesRun = 0;
-    static void getWorkers(FullState &state);
-    void work(FullState &state);
+    static void getWorkers();
+    void work();
 };
 
 struct DataWorkerComponent {

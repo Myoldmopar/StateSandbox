@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-    typedef void * State;
+    typedef unsigned int State;
     State getNewState();
     void clearState(State s);
     void deleteState(State s);

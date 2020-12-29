@@ -3,6 +3,6 @@
 #include <manager.h>
 
 int main() {
-    FullState s;
-    return internalRunSimulation(s);
+    createNewState();
+    return internalRunSimulation();
 }
